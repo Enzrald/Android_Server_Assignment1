@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Users</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center">
+  <h1>Users</h1>
+    <form method="get" action="/addUsers">
+    <button type="submit">Thêm người dùng</button>
+  </form> 
+  <hr>
+  <h2>Danh sách user</h2> <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tên </th>
+        <th>Email </th>
+        <th>Mật khẩu</th>
+        {{!-- <th>Ảnh đại diện</th> --}}
+        <th>Chức năng</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each dataOfUser}}
+      <tr>
+        <td>{{nameUsers}}</td>
+        <td>{{mailUsers}}</td>
+        <td>{{pass}}</td>
+        <td>Avt</td>
+        <td>
+          <form action="/editusers/{{idUsers}}" method="get">
+          <button type="submit">Sửa</button>
+          </form>
+          <form action="/deleteUsers/{{idUsers}}" method="post">
+          <button type="submit">Xóa</button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

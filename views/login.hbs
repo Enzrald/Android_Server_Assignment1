@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign in</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1>Đăng nhập</h1>
+    <hr>
+    <br>
+    <form method="post" action="/login">
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2" for="email">Email: </label>
+        <input class="col-lg-4" required type="email" id="EmailLogin" name="EmailLogin" placeholder="Nhập Email">
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2" for="password">Password: </label>
+        <input class="col-lg-4" required type="password" id="PassLogin" name="PassLogin" placeholder="Nhập Password">
+      </div><br>
+
+      <div class="text-center">
+        {{#if LoginError}}
+        <p class="alert alert-danger">{{LoginError}}</p>
+        {{/if}}
+      <button type="submit" class="btn btn-primary">Đăng nhập</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

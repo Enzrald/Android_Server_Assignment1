@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Sign up</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1 class="text-center">Đăng ký</h1>
+    <hr><br>
+
+    <form method="post" action="/signup">
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Email: </label>
+        <input class="col-lg-4" required type="email" id="email" name="email" placeholder="Nhập Email">
+        {{#if emailError}}
+        <strong class="alert alert-danger">{{emailError}}</strong>
+        {{/if}}
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Họ tên: </label>
+        <input class="col-lg-4" required type="text" id="names" name="names" placeholder="Nhập họ tên">
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Mật khẩu: </label>
+        <input class="col-lg-4" required type="password" id="password" name="password" placeholder="Nhập Mật khẩu">
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Xác nhận mật khẩu: </label>
+        <input class="col-lg-4" required type="password" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu">
+        {{#if passError}}
+        <strong class="alert alert-danger">{{passError}}</strong>
+        {{/if}}
+      </div><br>
+
+      <div class="row">
+        <span class="col-lg-2"></span>
+        <label class="col-lg-2">Avatar: </label>
+        <input class="col-lg-4" required type="file" id="Avatar" name="Avatar" accept="image/*" />
+      </div>
+    <br>
+
+      <div class="text-center">
+      <button type="submit" class="btn btn-primary">Đăng ký</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>

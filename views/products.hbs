@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center">
+  <h1>Products</h1>       
+  <form method="get" action="/add">
+    <button type="submit">thêm sản phẩm</button>
+  </form> 
+  <hr>
+  <h2>Danh sách sản phẩm</h2> <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Mã </th>
+        <th>Tên </th>
+        <th>Đơn giá</th>
+        <th>Hình ảnh</th>
+        <th>Màu sắc</th>
+        <th>Chức năng</th>
+      </tr>
+    </thead>
+
+    <tbody>
+       {{#each data}}
+      <tr>
+        <td>{{this.idSP}}</td>
+        <td>{{this.nameSP}}</td>
+        <td>{{this.priceSP}}</td>
+        <td>Hình ảnh</td> 
+        <td>{{this.colorSP}}</td>
+        <td>
+              <form action="/edit/{{idSP}}" method="get">
+        <button type="submit">Edit</button>
+      </form>
+      <form action="/delete/{{idSP}}" method="post">
+        <button type="submit">Delete</button>
+      </form>
+             </td>
+      </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+</div>
+
+</body>
+</html>
